@@ -9,11 +9,14 @@ online = discord.Status.online
 watch = discord.ActivityType.watching
 client = commands.Bot(command_prefix=None, intents=Intents.default(), status=idle)
 
-visitsChannelId = "None"
-membersChannelId = "None"
 
-robloxGroupId = "None"
-robloxGameId = "None"
+with open("config.json") as jFile:
+    data = json.load(jFile.read())
+    visitsChannelId = data["visitsChannelId"]
+    membersChannelId = data["membersChannelId"]
+    robloxGroupId = data["robloxGroupId"]
+    robloxGameId = data["robloxGameId"]
+    jFile.close()
 
 
 #on ready
