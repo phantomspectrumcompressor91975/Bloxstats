@@ -1,4 +1,4 @@
-from RobloxApi import GetGroupMemberCount, GetUniverseVisits
+from RobloxApi import request
 
 import discord, os, json
 from discord import Activity, Intents
@@ -41,7 +41,7 @@ async def check():
     VisitsChannel = client.get_channel(int(membersChannelId))
 
     if not robloxGroupId == "None":
-        members = GetGroupMemberCount(robloxGroupId)
+        members = request(robloxGroupId, 0)
         try:
             if members is not None:
                 await MembersChannel.edit(name=f'Group Members: {str(members)}'
@@ -56,7 +56,7 @@ async def check():
 
 
     if not robloxGameId == "None":
-        visits = GetUniverseVisits(robloxGameId)
+        visits = request(robloxGameId, 1)
         try:
             if visits is not None:
                 await VisitsChannel.edit(name=f'Game Visits: {str(visits)}')
