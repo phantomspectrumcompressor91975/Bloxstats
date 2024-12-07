@@ -1,12 +1,12 @@
 import json
 from urllib.request import urlopen
 
+
 requestUrls = [
   ["https://groups.roblox.com/v1/groups/{}", "memberCount"],
-  ["https://games.roblox.com/v1/games?universeIds={}", "visits"]
+  ["https://games.roblox.com/v1/games?universeIds={}", "visits"],
 ]
 
-print(requestUrls[0])
 
 def request(ID: int, index: int) -> int | None:
   table = requestUrls[index]
