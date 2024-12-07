@@ -11,7 +11,7 @@ client = commands.Bot(command_prefix=None, intents=Intents.default(), status=idl
 
 
 with open("config.json") as jFile:
-    data = json.load(jFile.read())
+    data = json.loads(jFile.read())
     visitsChannelId = data["visitsChannelId"]
     membersChannelId = data["membersChannelId"]
     robloxGroupId = data["robloxGroupId"]

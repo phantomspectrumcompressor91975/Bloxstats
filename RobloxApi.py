@@ -12,8 +12,7 @@ def GetGroupMemberCount(GroupID: int) -> int | None:
 
 
 def GetUniverseVisits(universeId: int) -> int | None:
-  response = urlopen(
-      f"https://games.roblox.com/v1/games?universeIds={universeId}")
+  response = urlopen(f"https://games.roblox.com/v1/games?universeIds={universeId}")
   if response.status == 200:
     resJson = json.loads(response.read())
     data = resJson['data'][0]
